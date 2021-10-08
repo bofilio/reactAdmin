@@ -1,16 +1,27 @@
-import Content from "./Content";
-import SideBar from "./SideBar";
-import '../site.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import PersistentDrawerLeft from './navigation/SideBar';
+import { ThemeProvider } from '@emotion/react';
+import light_theme from '../themes/light';
+import TopBar from './navigation/TopBar';
+import SideBar from './navigation/SideBar';
+import Content from './main/Content';
+import useWindowListner from '../state/hooks/useWindowListner';
 function App() {
+  useWindowListner();
   return (
-    <>
-    <Router>
-       <SideBar/>
-      <Content/>
-    </Router>
-     
-    </>
+
+    <div style={{ display: 'flex' }}>
+
+      <TopBar />
+      <SideBar />
+      <Content>
+        <Router>
+        </Router>
+      </Content>
+
+    </div>
+
+
   );
 }
 
