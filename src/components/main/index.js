@@ -5,9 +5,10 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Table from './crud/List';
+import AreaSample from './charts/area/Area';
 
 //
-const Content = () => {
+const Index = () => {
     const { onMobile } = useSelector(state => state.ui.window)
     const { open, width: sideBarWidth } = useSelector(state => state.ui.sidebar)
     const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -37,4 +38,4 @@ const Content = () => {
     )
 }
 
-export default Content
+export default Index

@@ -17,8 +17,7 @@ import { useAction } from '../../state/hooks/useAction';
 import { Typography } from '@mui/material';
 //*************** 
 
-const SideBar=()=>{
-   
+const SideBar=()=>{ 
     const {onMobile}=useSelector(state=>state.ui.window)
     const {open,width:sideBarWidth}  = useSelector(state => state.ui.sidebar)
     const { toggoleSideBar } = useAction();
@@ -66,11 +65,7 @@ const SideBar=()=>{
                     ))}
                 </List>
             </Drawer>
-            {/*<Drawer  variant="permanent" sx={{ display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: sideBarWidth },
-          }}
-          open
-        ></Drawer>*/}
+           
             </>
     );
 }
