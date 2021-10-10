@@ -5,10 +5,10 @@ const light_theme = createTheme(common_theme, {
     palette: {
       type: 'light',
       primary: {
-        main: '#264653',
+        main: '#224abe',
       },
       secondary: {
-        main: '#f4f1de',
+        main: '#c2cbe5',
       },
       error: {
         main: '#e76f51',
@@ -17,7 +17,10 @@ const light_theme = createTheme(common_theme, {
         main: '#f4a261',
       },
       success: {
+        light:'#36b9cc',
         main: '#2a9d8f',
+        dark:'#004b57'
+
       },
       info: {
         main: '#a8dadc',

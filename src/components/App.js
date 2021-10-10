@@ -1,20 +1,20 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import PersistentDrawerLeft from './navigation/SideBar';
-import { ThemeProvider } from '@emotion/react';
-import light_theme from '../themes/light';
+import { BrowserRouter as Router } from 'react-router-dom'
 import Navigation from './navigation'
 import Main from './main';
 import useWindowListner from '../state/hooks/useWindowListner';
+import light_theme from '../themes/light';
+import { ThemeProvider } from '@emotion/react';
 function App() {
   useWindowListner();
   return (
-
-    <div style={{ display: 'flex', width:'100%'}}>
-      <Navigation/>
-      <Main/>
-    </div>
-
-
+    <ThemeProvider theme={light_theme}>
+      <Router>
+        <div style={{ display: 'flex', width: '100%' }}>
+          <Navigation />
+          <Main />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -1,13 +1,9 @@
 import React from 'react'
 import { styled } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import Table from './crud/List';
-import AreaSample from './charts/area/Area';
-
-//
+import PieChart from './charts/pie/Pie'
+import { Switch,Route} from 'react-router-dom'
 const Index = () => {
     const { onMobile } = useSelector(state => state.ui.window)
     const { open, width: sideBarWidth } = useSelector(state => state.ui.sidebar)
@@ -30,10 +26,16 @@ const Index = () => {
             }),
         }),
     );
-
     return (
         <Main open={open}>
-          <Table/>
+            <Switch>
+                <Route path='/dashboard' exact >
+                    <PieChart/>
+                </Route>
+                <Route path='/data' exact >
+                    <Table/>
+                </Route>
+            </Switch>
         </Main>
     )
 }
